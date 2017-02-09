@@ -69,7 +69,7 @@ function destroyAll (id) {
       console.log(err)
       return
     }
-    console.log("Everything destroyed")
+    console.log('Everything destroyed')
   })
 }
 
