@@ -1,3 +1,9 @@
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/todo')
+mongoose.Promise = global.Promise
+const Todo = require('./models/todo.js') // Imports the Todo constructor
+
+// typed above this line
 const todos = require('./controllers/todos_controller.js')
 const readline = require('readline')
 const rl = readline.createInterface(process.stdin, process.stdout)
@@ -41,6 +47,9 @@ rl.on('line', (line) => {
       break
     case 'destroy':
       todos.destroy(words[1])
+      break
+    case 'destroyAll':
+      todos.destroyAll()
       break
     case 'quit':
       rl.close()
